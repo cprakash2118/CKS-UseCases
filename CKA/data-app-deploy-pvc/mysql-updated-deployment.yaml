@@ -1,0 +1,94 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "2"
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"mysql","namespace":"ns-db-app-deployment"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"mysql"}},"template":{"metadata":{"labels":{"app":"mysql"},"name":"mysql"},"spec":{"containers":[{"image":"quay.io/cprakash2118/rhel8-mysql-80","name":"mysql","ports":[{"containerPort":3306}]}]}}}}
+  creationTimestamp: "2025-09-09T14:59:56Z"
+  generation: 2
+  name: mysql
+  namespace: ns-db-app-deployment
+  resourceVersion: "6887145"
+  uid: e0674c2b-a1e5-41d5-9134-f43f142dff27
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: mysql
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mysql
+      name: mysql
+    spec:
+      volumes:
+      - name: web-data-any
+        persistentVolumeClaim:
+          claimName: nfs-pvc 
+      containers:
+      - env:
+        - name: MYSQL_HOSTNAME
+          valueFrom:
+            secretKeyRef:
+              key: hostname
+              name: mysql
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: mysql
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              key: user
+              name: mysql
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              key: database
+              name: mysql
+        image: quay.io/cprakash2118/rhel8-mysql-80
+        imagePullPolicy: Always
+        name: mysql
+        ports:
+        - containerPort: 3306
+          protocol: TCP
+        resources: {}
+        volumeMounts:
+        - name: web-data-any
+          mountPath: /var/lib/mysql/data
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2025-09-09T15:02:38Z"
+    lastUpdateTime: "2025-09-09T15:02:38Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2025-09-09T14:59:56Z"
+    lastUpdateTime: "2025-09-09T15:02:38Z"
+    message: ReplicaSet "mysql-767c5b487c" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 2
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1

@@ -1,0 +1,1003 @@
+   30  cd CKA/
+   31  pwd
+   32  ll
+   33  vim pod.yaml 
+   34  vim vim replicaSet.yaml
+   35  vim vim 
+   36  ll
+   37  mv vim replicaSet.yaml
+   38  vim replicaSet.yaml 
+   39  vim deployment.yaml 
+   40  cp -rpv replicaSet.yaml deployment.yaml 
+   41  cp -rpv replicaSet.yaml daemonSet.yaml 
+   42  vim deployment.yaml 
+   43  vim daemonSet.yaml 
+   44  oc get is -n openshift | grep nginx
+   45  oc get is -n openshift | grep httpd
+   46  ll
+   47  vim pod.yaml 
+   48  ll
+   49  vim ~/.bashrc 
+   50  source  ~/.bashrc 
+   51  kubectl create namespace ns-demo01 
+   52  check-ns 
+   53  switch-ns ns-demo01
+   54  check-ns 
+   55  kubectl get all
+   56  kubectl apply -f pod.yaml 
+   57  kubectl get pods
+   58  kubectl exec -it myapp bash 
+   59  kubectl get pods
+   60  kubectl get pods -o wide 
+   61  vim service.yaml
+   62  cp -rpv service.yaml service-reference.yaml 
+   63  vim service.yaml 
+   64  oc apply -f service.yaml 
+   65  kubectl get pods
+   66  kubectl get svc 
+   67  kubectl describe svc 
+   68  ll
+   69  vim pod.yaml 
+   70  kubectl apply -f pod.yaml 
+   71  kubectl get pods 
+   72  kubectl get svc 
+   73  kubectl get pods 
+   74  kubectl describe svc 
+   75  kubectl get pods -o wide 
+   76  kubectl exec -it myapp1 bash 
+   77  kubectl get all 
+   78  vim pod.yaml 
+   79  kubectl delete -f pod.yaml 
+   80  kubectl get all 
+   81  kubectl get svc 
+   82  kubectl describe svc 
+   83  oc new-app --name test httpd
+   84  kubectl get pods
+   85  kubectl get svc myapp 
+   86  oc rsh test-54887b85c6-s2xcb 
+   87  kubectl get pods 
+   88  kubectl get pods -o wide 
+   89  kubectl describe svc myapp 
+   90  oc rsh test-54887b85c6-s2xcb 
+   91  kubectl get pods
+   92  kubectl exec -it myapp bash 
+   93  oc rsh myapp 
+   94  oc get pods
+   95  oc edit deployment test 
+   96  vim pod.yaml 
+   97  oc edit deployment test 
+   98  vim pod.yaml 
+   99  ll
+  100  oc delete -f pod.yaml 
+  101  vim pod.yaml 
+  102  oc delete -f pod.yaml 
+  103  vim pod.yaml 
+  104  kubectl get pods
+  105  vim pod.yaml 
+  106  oc delete -f pod.yaml 
+  107  vim pod.yaml 
+  108  oc delete -f pod.yaml 
+  109  kubectl apply -f pod.yaml 
+  110  vim pod.yaml 
+  111  kubectl apply -f pod.yaml 
+  112  kubectl get pods 
+  113  kubectl get svc 
+  114  oc delete  all -l app=prod 
+  115  oc delete  all -l app=test 
+  116  kubectl get all
+  117  oc new-app --name test httpd
+  118  kubectl get pods
+  119  kubectl get svc 
+  120  kubectl get pods
+  121  kubectl get svc 
+  122  kubectl get pod
+  123  kubectl get svc myapp 
+  124  oc rsh myapp 
+  125  ll
+  126  vim pod.yaml 
+  127  vim replicaSet.yaml 
+  128  kubectl get pods
+  129  kubectl exec -it test-54887b85c6-b9lqh bash 
+  130  kubectl get nodes
+  131  kubectl get pods
+  132  kubectl get pods -o wide
+  133  kubectl get svc myapp 
+  134  ll
+  135  kubectl delete -f pod.yaml 
+  136  kubectl delete -f service.yaml 
+  137  oc delete all -l app=test 
+  138  kubectl get all
+  139  ll
+  140  vim replicaSet.yaml 
+  141  kubectl create -f replicaSet.yaml 
+  142  kubectl get pods
+  143  kubectl get svc 
+  144  kubectl get deployment 
+  145  kubectl get replicaset
+  146  kubectl delete pod myapp-mgmkr 
+  147  kubectl get pods
+  148  vim replicaSet.yaml 
+  149  kubectl get pods
+  150  vim replicaSet.yaml 
+  151  kubectl apply -f replicaSet.yaml 
+  152  kubectl get pods
+  153  kubectl get svc
+  154  kubectl create -f service.yaml 
+  155  kubectl get svc 
+  156  kubectl describe svc 
+  157  kubectl get pods
+  158  kubectl exec -it myapp-9 bash 
+  159  kubectl exec -it myapp-9szhv bash 
+  160  kubectl describe svc 
+  161  kubectl delete -f replicaSet.yaml 
+  162  vim daemonSet.yaml 
+  163  > deployment.yaml 
+  164  cp -rpv replicaSet.yaml deployment.yaml 
+  165  cp -rpv replicaSet.yaml daemonSet.yaml 
+  166  vim deployment.yaml 
+  167  vim daemonSet.yaml 
+  168  vim deployment.yaml 
+  169  vim daemonSet.yaml 
+  170  oc apply -f daemonSet.yaml 
+  171  kubectl get all 
+  172  kubectl get pods 
+  173  kubectl get pods -o wid e
+  174  kubectl get pods -o wide
+  175  kubectl get daemon 
+  176  kubectl get daemonsets.apps 
+  177  ll
+  178  kubectl delete -f daemonSet.yaml 
+  179  kubectl get daemonsets.apps 
+  180  kubectl get pods -o wide
+  181  kubectl create -f replicaSet.yaml 
+  182  kubectl get pods
+  183  kubectl get rs
+  184  kubectl get deployment 
+  185  kubectl describe svc 
+  186  kubectl edit svc 
+  187  kubectl get pods -o wide 
+  188  kubectl describe svc 
+  189  kubectl edit svc 
+  190  kubectl describe svc 
+  191  kubectl edit svc 
+  192  kubectl get pods -o wide 
+  193  kubectl describe svc 
+  194  kubectl get pods -o wide 
+  195  kubectl get svc 
+  196  curl http://172.30.25.240:8080
+  197  curl http://192.168.50.23:8080
+  198  kubectl edit svc 
+  199  vim service.yaml 
+  200  vim Containerfile
+  201  sudo su - 
+  202  vim Containerfile 
+  203  podman build -t image-cp-apache-update-version .
+  204  vim Containerfile 
+  205  ll
+  206  kubectl get pods 
+  207  kubectl get svc 
+  208  kubectl exec -it myapp-9r555 bash 
+  209  vim replicaSet.yaml 
+  210  kubectl apply -f replicaSet.yaml 
+  211  kubectl get pods 
+  212  vim replicaSet.yaml 
+  213  kubectl apply -f replicaSet.yaml 
+  214  kubectl get pods 
+  215  vim replicaSet.yaml 
+  216  kubectl apply -f replicaSet.yaml 
+  217  kubectl get pods 
+  218  kubectl get svc 
+  219  kubectl describe svc 
+  220  kubectl get network cluster -o yaml 
+  221  cat /etc/rht
+  222  ll
+  223  cd
+  224  oc new-project ns-01 
+  225  oc new-project ns-02
+  226  oc project -q 
+  227  oc project ns-01 
+  228  oc project -q 
+  229  oc new-app --name hello  --image registry.ocp4.example.com:8443/redhattraining/hello-world-nginx:v1.0
+  230  oc get pdos 
+  231  oc get pods
+  232  oc new-app --name test  --image registry.ocp4.example.com:8443/redhattraining/hello-world-nginx:v1.0
+  233  oc get pods
+  234  oc project -q
+  235  oc project ns-02 
+  236  oc new-app --name sample  --image registry.ocp4.example.com:8443/redhattraining/hello-world-nginx:v1.0
+  237  oc get pods
+  238  oc project -q
+  239  oc project ns-01 
+  240  oc get pods
+  241  oc get pods -o wide 
+  242  oc rsh test-6bc6f5645c-9pdfm
+  243  oc project ns-02 
+  244  oc get pods
+  245  oc rsh sample-59dc8d7c85-hcgds 
+  246  oc project ns-01 
+  247  oc project -q 
+  248  oc get networkpolicies.networking.k8s.io 
+  249  vim deny-all.yaml 
+  250  oc apply -f deny-all.yaml 
+  251  oc get networkpolicies.networking.k8s.io 
+  252  oc get pods
+  253  oc get pods -o wide 
+  254  oc rsh test-6bc6f5645c-9pdfm 
+  255  oc project ns-02
+  256  oc get pods
+  257  oc rsh sample-59dc8d7c85-hcgds 
+  258  oc project ns-01 
+  259  oc project -q 
+  260  oc get networkpolicies.networking.k8s.io 
+  261  cp -rpv deny-all.yaml allow-specific-from-sample-to-hello.yaml 
+  262  vim allow-specific-from-sample-to-hello.yaml 
+  263  oc apply -f allow-specific-from-sample-to-hello.yaml 
+  264  oc get networkpolicies.networking.k8s.io 
+  265  oc apply -f deny-all.yaml 
+  266  vim allow-specific-from-sample-to-hello.yaml 
+  267  oc apply -f allow-specific-from-sample-to-hello.yaml 
+  268  oc get networkpolicies.networking.k8s.io 
+  269  vim allow-specific-from-sample-to-hello.yaml 
+  270  oc get pods
+  271  vim allow-specific-from-sample-to-hello.yaml 
+  272  oc project -q
+  273  oc get pods 
+  274  oc get pods -o wide 
+  275  oc rsh test-6bc6f5645c-9pdfm 
+  276  oc project ns-02 
+  277  oc get pods
+  278  oc rsh sample-59dc8d7c85-hcgds 
+  279  #oc label namespaces ns-02 
+  280  cat allow-specific-from-sample-to-hello.yaml 
+  281  #oc label namespaces ns-02 network-anyname=ns-02
+  282  oc get namespaces ns-02 --show-labels 
+  283  oc label namespaces ns-02 network-anyname=ns-02
+  284  oc get namespaces ns-02 --show-labels | grep any
+  285  oc project -q
+  286  oc rsh sample-59dc8d7c85-hcgds 
+  287  oc project -q 
+  288  oc project ns-01 
+  289  oc get pods
+  290  oc rsh test-6bc6f5645c-9pdfm 
+  291  ll
+  292  oc get networkpolicies.networking.k8s.io 
+  293  cp -rpv allow-specific-from-sample-to-hello.yaml allow-specific-from-test-to-hello.yaml 
+  294  vim allow-specific-from-test-to-hello.yaml
+  295  oc apply -f allow-specific-from-test-to-hello.yaml 
+  296  oc get networkpolicies.networking.k8s.io 
+  297  oc get namespaces ns-01  --show-labels | grep any 
+  298  oc get namespaces ns-01  --show-labels 
+  299  oc get namespaces ns-01  --show-labels | grep any 
+  300  oc label namespaces ns-01 network-anyname=ns-01
+  301  oc get namespaces ns-01  --show-labels | grep any 
+  302  oc get pods -o wide 
+  303  oc rsh test-6bc6f5645c-9pdfm 
+  304  oc get pdos -o wide 
+  305  oc get pods -o wide 
+  306  oc scale --replicas=2 deployment hello 
+  307  oc get pods 
+  308  oc get pods -o wide 
+  309  oc rsh hello-df5569cd7-5p45g 
+  310  oc get networkpolicies.networking.k8s.io 
+  311  cp -rpv allow-specific-from-test-to-hello.yaml allow-specific-from-hello-to-hello.yaml 
+  312  vim allow-specific-from-hello-to-hello.yaml
+  313  oc apply -f allow-specific-from-hello-to-hello.yaml 
+  314  oc get networkpolicies.networking.k8s.io 
+  315  oc get pods -ow wide 
+  316  oc get pods -o wide 
+  317  oc scale --replicas=5 deployment hello 
+  318  oc get pods -o wide 
+  319  oc rsh hello-df5569cd7-5p45g
+  320  oc get networkpolicies.networking.k8s.io 
+  321  vim -O allow-specific-from-sample-to-hello.yaml allow-specific-from-test-to-hello.yaml allow-specific-from-hello-to-hello.yaml 
+  322  vim allow-specific-from-hello-to-hello.yaml 
+  323  oc explain networkpolicy |less
+  324  oc explain networkpolicy.spec |less
+  325  vim allow-specific-from-hello-to-hello.yaml 
+  326  oc explain networkpolicy.spec |less
+  327  oc explain networkpolicy.spec.podSelector |less
+  328  oc explain networkpolicy.spec.podSelector.matchLabels |less
+  329  oc explain networkpolicy.spec.podSelector |less
+  330  oc get pods
+  331  oc get deployment
+  332  oc edit deployment hello 
+  333  oc explain networkpolicy.specingress |less
+  334  oc explain networkpolicy.spec.ingress |less
+  335  oc explain networkpolicy.spec.ingress.from |less
+  336  oc explain networkpolicy.spec.ingress.from.namespaceSelector |less
+  337  vim test.yaml
+  338  ll
+  339  cd CKA/
+  340  pwd
+  341  ll
+  342  oc version 
+  343  cd
+  344  oc projects
+  345  oc projects |less
+  346  oc project network-lb
+  347  oc get nodes
+  348  oc get pods
+  349  oc get cdi 
+  350  oc get vm
+  351  oc get vmi 
+  352  oc get svc
+  353  cd work/
+  354  pwd
+  355  l
+  356  ll
+  357  cp -rpv service.yaml ~/
+  358  cd
+  359  cat service.yaml 
+  360  oc get vmi -o yaml 
+  361  oc get vmi -o yaml |head -30
+  362  oc get vmi -o yaml |wc -l 
+  363  oc get vmi -o yaml |head -25
+  364  oc get pods
+  365  oc rsh virt-launcher-vm1-8w755 
+  366  oc get pods
+  367  oc rsh virt-launcher-vm1-8w755 
+  368  oc get vmi 
+  369  oc get svc 
+  370  ssh developer@192.168.50.22
+  371  cat /etc/yum.repos.d/rhel_dvd.repo 
+  372  cd .ssh/
+  373  ll
+  374  oc get svc 
+  375  scp lab_rsa* cp@192.168.50.24:~/.ssh 
+  376  scp lab_rsa* cp@192.168.50.22:~/.ssh 
+  377  cd
+  378  ssh root@utility 
+  379  ssh cp@utility 
+  380  ssh utility 
+  381  ssh cp@utility 
+  382  ssh bastion 
+  383  ssh 192.168.50.24
+  384  oc get svc 
+  385  oc get pods -o wide 
+  386  oc get network/cluster -o yaml 
+  387  bc
+  388  oc get pods -o wide 
+  389  history > history-04-sept-25
+  390  oc get co
+  391  oc get cs
+  392  oc get sc
+  393  ssh root@utility
+  394  ll
+  395  oc whoami
+  396  oc logout
+  397  ll
+  398  mv .kube /tmp
+  399  oc whoami
+  400  oc whoami --kubeconfig kubeconfig
+  401  oc logout --kubeconfig /home/student/kubeconfig
+  402  oc whoami --kubeconfig kubeconfig
+  403  export KUBECONFIG=/home/student/kubeconfig
+  404  oc whoami
+  405  oc whoami -t
+  406  env | grep KUBCONFIG 
+  407  env | grep KUB
+  408  unset KUBECONFIG
+  409  env | grep KUB
+  410  oc whoami -t
+  411  kubectl completion --help |less
+  412  vim ~/.bashrc 
+  413  source  .bashrc 
+  414  vim ~/.bashrc 
+  415  kubectl completion bash > ~/.kube/completion.bash.inc
+  416  kubectl completion bash > /home/student/.kube/completion.bash.inc
+  417  oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+  418  oc logout 
+  419  ls -l ~/.kube/
+  420  kubectl completion bash > /home/student/.kube/completion.bash.inc
+  421  source ~/.bashrc
+  422  vim ~/.bashrc 
+  423  source ~/.bashrc
+  424  kubectl completion --help |less
+  425   source <(kubectl completion bash)
+  426    ## Write bash completion code to a file and source it from .bash_profile
+  427    kubectl completion bash > ~/.kube/completion.bash.inc
+  428    printf "
+  429    # kubectl shell completion
+  430    source '$HOME/.kube/completion.bash.inc'
+  431    " >> $HOME/.bash_profile
+  432    source $HOME/.bash_profile
+  433  kubectl create namespace ns-task-01 
+  434  oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+  435  kubectl create namespace ns-task-01 
+  436  kubectl get nodes
+  437  check-ns 
+  438  switch-ns ns-task-01
+  439  check-ns 
+  440  kubectl get pods 
+  441  kubectl get svc 
+  442  kubectl get rs,deploy
+  443  kubectl create secret generic secret-generic-demo-01  --from-file /etc/passwd 
+  444  kubectl get secret secret-generic-demo-01 
+  445  kubectl get secret secret-generic-demo-01 -o yaml 
+  446  kubectl get secret secret-generic-demo-01 -o json
+  447  kubectl get secret secret-generic-demo-01 -o yaml 
+  448  kubectl create deployment db-pod --port 3306 --image registry.ocp4.example.com:8443/rhel8/mysql-80
+  449  kubectl get pods
+  450  kubectl get replicaset 
+  451  kubectl get deployment 
+  452  kubectl logs db-pod-6fb7568ff6-6npn8
+  453  kubectl get pods
+  454  kubectl create secret generic secret-name-anything --from-literal  MYSQL_USER='user1' --from-literal MYSQL_PASSWORD='mypa55w0rd'  --from-literal MYSQL_DATABASE='items'
+  455  kubectl create secret generic secret-name-anything --from-literal  MYSQL_USER='user1' --from-literal MYSQL_PASSWORD='mypa55w0rd'  --from-literal MYSQL_DATABASE='items' --dry-run=client -o yaml > secret-mysql.yaml 
+  456  vim secret-mysql.yaml 
+  457  kubectl get pods
+  458  kubectl set env --help |
+  459  kubectl set env --help |less
+  460  #kubectl set env deployment/registry STORAGE_DIR=/local
+  461  kubectl set env deployment/db-pod --help |less
+  462  #kubectl set env --from=secret/mysecret deployment/myapp
+  463  kubectl set env --from  secret/secret-name-anything deployment db-pod
+  464  kubectl get pods
+  465  kubectl exec -it db-pod-6d697b6b6-v9d2n bash
+  466  #kubectl set env --from  secret/secret-name-anything deployment db-pod
+  467  #kubectl create secret generic secret-name-anything --from-literal  MYSQL_USER='user1' --from-literal MYSQL_PASSWORD='mypa55w0rd'  --from-literal MYSQL_DATABASE='items' --dry-run=client -o yaml > secret-mysql.yaml 
+  468  vim secret-mysql.yaml 
+  469  base6 -w0 aXRlbXM=
+  470  base64 -w0 aXRlbXM=
+  471  echo aXRlbXM= |base64 -d
+  472  echo aXRlbXM= |base64 -d ; echo
+  473  kubectl get pods
+  474  kubectl delete deployment db-pod 
+  475  kubectl get pods
+  476  kubectlrs
+  477  kubectl rs
+  478  kubectl get rs
+  479  #kubectl create secret generic secret-name-anything --from-literal  MYSQL_USER='user1' --from-literal MYSQL_PASSWORD='mypa55w0rd'  --from-literal MYSQL_DATABASE='items' --dry-run=client -o yaml > secret-mysql.yaml 
+  480  kubectl create configmap cm-name --from-literal  MYSQL_USER='user1' --from-literal MYSQL_PASSWORD='mypa55w0rd'  --from-literal MYSQL_DATABASE='items'
+  481  kubectl get secret secret-name-anything 
+  482  kubectl get cm cm-name 
+  483  kubectl get secret secret-name-anything -o yaml 
+  484  echo bXlwYTU1dzByZA== | base64 -d 
+  485  echo bXlwYTU1dzByZA== | base64 -d ; echo  
+  486  kubectl get cm cm-name -o yaml 
+  487  kubectl create deployment db-pod --port 3306 --image registry.ocp4.example.com:8443/rhel8/mysql-80
+  488  kubectl get pods
+  489  #kubectl set env --from  secret/secret-name-anything deployment db-pod
+  490  kubectl set env --from cm/cm-name deployment db-pod 
+  491  kubectl get pods
+  492  kubectl delete deployment db-pod 
+  493  kubectl get pods
+  494  kubectl get rs
+  495  cd CKA/
+  496  pwd
+  497  ll
+  498  cp -rpv deployment.yaml deployment-mysql.yaml 
+  499  vim deployment-mysql.yaml 
+  500  kubectl create -f deployment-mysql.yaml 
+  501  kubectl get pods
+  502  vim deployment-mysql.yaml 
+  503  kubectl create -f deployment-mysql.yaml 
+  504  kubectl apply -f deployment-mysql.yaml 
+  505  kubectl get pods
+  506  kubectl logs mysql-94bfd4b58-5w8l8 
+  507  kubectl get pos
+  508  kubectl get pods 
+  509  kubectl set env --from cm/cm-name deployment db-pod 
+  510  kubectl set env --from cm/cm-name deployment mysql
+  511  kubectl get pods 
+  512  kubectl exec -it mysql-675d8ffd9c-jmvv2 bash 
+  513  ll
+  514  cp -rpv deployment-mysql.yaml deployment-quotes.yaml 
+  515  vim deployment-quotes.yaml 
+  516  kubectl create -f deployment-quotes.yaml 
+  517  kubectl get pods
+  518  watch kubectl get pods
+  519  kubectl get pods
+  520  vim deployment-quotes.yaml 
+  521  kubectl logs myapp-65f4c99b7-kjbzn 
+  522  kubectl create secret generic mysql --from-literal  QUOTES_USER='user1' --from-literal QUOTES_PASSWORD='mypa55w0rd'  --from-literal QUOTES_DATABASE='items'
+  523  #kubectl set env --from secret/mysql deployment myapp 
+  524  kubectl get deployment 
+  525  kubectl set env --from secret/mysql deployment myapp 
+  526  kubectl get pods
+  527  kubectl logs  myapp-57d4bbc4c8-sjd6v 
+  528  kubectl get pods
+  529  #kubectl set env --from secret/mysql deployment myapp 
+  530  #kubectl create secret generic mysql --from-literal  QUOTES_USER='user1' --from-literal QUOTES_PASSWORD='mypa55w0rd'  --from-literal QUOTES_DATABASE='items'
+  531  kubectl get pods
+  532  #kubectl set env --from secret/mysql deployment myapp 
+  533  kubectl set env --from secret/mysql deployment myapp 
+  534  kubectl get pods
+  535  vim deployment-quotes.yaml 
+  536  ll
+  537  mkdir data-app-deploy
+  538  cp -rpv deployment-mysql.yaml deployment-quotes.yaml data-app-deploy/
+  539  cd data-app-deploy/
+  540  pwd
+  541  ll
+  542  kubectl delete -f .
+  543  kubectl get pods 
+  544  kubectl get rs
+  545  kubectl get deploy
+  546  kubectl get secret 
+  547  kubectl delete secret secret-generic-demo-01 
+  548  kubectl delete secret secret-name-anything 
+  549  kubectl delete secret mysql 
+  550  check-ns 
+  551  kubectl create secret generic mysql --from-literal user=myuser --from-literal password=redhat123 --from-literal database=test_secrets --from-literal hostname=mysql
+  552  kubectl set env --from secret/mysql deployment myapp --help | grep -i prefix
+  553  #kubectl set env --from secret/mysql deployment mysql --prefix=MYSQL_
+  554  #kubectl set env --from secret/mysql deployment mysql --prefix=QUOTES_
+  555  #kubectl set env --from secret/mysql deployment myapp --prefix=QUOTES_
+  556  #kubectl create secret generic mysql --from-literal user=myuser --from-literal password=redhat123 --from-literal database=test_secrets --from-literal hostname=mysql
+  557  #kubectl set env --from secret/mysql deployment mysql --prefix=MYSQL_
+  558  #kubectl set env --from secret/mysql deployment myapp --prefix=QUOTES_
+  559  kubectl get posd
+  560  kubectl get pods
+  561  ll
+  562  kubectl create -f deployment-mysql.yaml 
+  563  kubectl get pods
+  564  kubectl set env --from secret/mysql deployment mysql --prefix=MYSQL_
+  565  kubectl get pods
+  566  kubectl create -f deployment-quotes.yaml 
+  567  kubectl get pods
+  568  watch kubectl get pods
+  569  kubectl logs  myapp-65f4c99b7-pkfcs 
+  570  kubectl get pods
+  571  kubectl set env --from secret/mysql deployment myapp --prefix=QUOTES_
+  572  kubectl get pods
+  573  kubectl get pods myapp-7cf4cbdc4d-sjd7j
+  574  kubectl logs myapp-7cf4cbdc4d-sjd7j
+  575  kubectl get pods
+  576  kubectl logs myapp-7cf4cbdc4d-2g6ll
+  577  cp -rpv ../service.yaml .
+  578  ll
+  579  vim service.yaml 
+  580  cp -rpv service.yaml service-mysql.yaml 
+  581  cp -rpv service.yaml service-myapp.yaml 
+  582  vim service-mysql.yaml 
+  583  kubectl apply -f service-mysql.yaml 
+  584  vim service-myapp.yaml 
+  585  kubectl apply -f service-myapp.yaml 
+  586  kubectl get pods 
+  587  kubectl get svc 
+  588  kubectl describe svc mysql 
+  589  kubectl describe svc myapp 
+  590  kubectl get pods
+  591  vim service-myapp.yaml 
+  592  kubectl apply -f service-myapp.yaml 
+  593  kubectl get pods
+  594  kubectl get svc
+  595  kubectl exec -it mysql-7f6c74bb89-bgffv 
+  596  kubectl exec -it mysql-7f6c74bb89-bgffv bash 
+  597  kubectl get pods
+  598  kubectl exec -it mysql-7f6c74bb89-bgffv bash 
+  599  kubectl get pods 
+  600  kubectl scale --replicas=3 deployment myapp 
+  601  kubectl get pods 
+  602  kubectl get rs
+  603  oc get sc
+  604  oc get storageclusterversion 
+  605  oc get storageclusters.ocs.openshift.io 
+  606  oc get storageclusters.ocs.openshift.io -n openshift-storage 
+  607  kubectl get storageclusters.ocs.openshift.io -n openshift-storage 
+  608  cd
+  609  oc whoami 
+  610  oc get nodes
+  611  oc get network -o yaml 
+  612  oc get mc 
+  613  oc get mcp
+  614  oc version 
+  615  oc get network -o yaml 
+  616  oc get pods -n openshift-dns
+  617  oc get pods -n openshift-dns -o wide 
+  618  oc get pods -n openshift-dns -o wide  | grep master 
+  619  oc get pods -n openshift-dns -o wide  | grep worker 
+  620  oc get nodes
+  621  oc debug node/master01 
+  622  oc debug node/worker01
+  623  oc get network -o yaml 
+  624  oc get nodes
+  625  oc version 
+  626  cd CKA/
+  627  ll
+  628  vim pod.yaml 
+  629  vim -O pod.yaml replicaSet.yaml 
+  630  oc explain pod |less
+  631  vim -O pod.yaml 
+  632  oc explain pod.spec |less
+  633  vim -O pod.yaml replicaSet.yaml 
+  634  vim -O pod.yaml replicaSet.yaml deployment.yaml 
+  635  vim -O pod.yaml replicaSet.yaml deployment.yaml daemonSet.yaml 
+  636  oc get sc
+  637  oc project network-lb 
+  638  oc get pods
+  639  oc adm policy add-role-to-user admin developer -n network-lb 
+  640  oc get users 
+  641  oc get users  | grep developer
+  642  oc adm policy add-role-to-user admin user30 -n network-lb 
+  643  oc get pods 
+  644  oc login -u user30 -p redhat 
+  645  oc get pods 
+  646  oc rsh virt-launcher-rhel9-ex280-vl8zg
+  647  oc whoami 
+  648  oc get vmi 
+  649  oc get vm 
+  650  virtctl stop rhel9-ex280
+  651  oc get vm 
+  652  oc get vmi
+  653  virtctl start rhel9-ex280
+  654  oc get vmi
+  655  oc describe rolebindings |less
+  656  oc get rolebindings
+  657  oc describe rolebindings |less
+  658  oc policy add-role-to-user view user29
+  659  oc describe rolebindings |less
+  660  oc login -u user29 -p redhat 
+  661  oc get pods
+  662  oc get vm
+  663  oc get vmi
+  664  virtctl stop rhel9-ex280
+  665  oc whoami 
+  666  oc get vmi 
+  667  virtctl console rhel9-ex280
+  668  oc login -u admin -p redhatocp
+  669  virtctl console rhel9-ex280
+  670  oc project -q
+  671  oc get networkpolicies.networking.k8s.io 
+  672  oc get networkpolicies.networking.k8s.io allowed-service -o yaml > allow-service.yaml
+  673  vim allow-service.yaml 
+  674  oc apply -f allow-service.yaml 
+  675  oc get networkpolicies.networking.k8s.io 
+  676  vim allow-service.yaml 
+  677  oc get vmi 
+  678  virtctl console rhel9-ex280
+  679  exit
+  680  oc get svc 
+  681  ssh cp@192.168.50.24
+  682  oc get svc 
+  683  vim service.yaml 
+  684  oc apply -f service.yaml 
+  685  oc get svc 
+  686  curl http://192.168.50.24
+  687  vim service.yaml 
+  688  oc apply -f service.yaml 
+  689  curl http://192.168.50.24
+  690  curl http://192.168.50.24:82
+  691  oc get svc 
+  692  vim service.yaml 
+  693  oc apply -f service.yaml 
+  694  oc get svc 
+  695  curl http://192.168.50.24
+  696  vim service.yaml 
+  697  oc apply -f service.yaml 
+  698  oc get svc 
+  699  curl http://192.168.50.24
+  700  curl http://192.168.50.24:82
+  701  ssh cp@192.168.50.24
+  702  oc get svc 
+  703  curl http://192.168.50.24:82
+  704  oc delete svc headless 
+  705  curl http://192.168.50.24:82
+  706  oc get svc 
+  707  vim service.yaml 
+  708  ssh cp@192.168.50.24 
+  709  oc get svc 
+  710  ssh developer@192.168.50.22
+  711  oc get svc 
+  712  ssh cp@192.168.50.24
+  713  oc whoami 
+  714  oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+  715  oc project network-lb 
+  716  oc get pods
+  717  oc get cdi
+  718  oc explain cdi |less
+  719  oc get vm 
+  720  oc get vmi 
+  721  oc get svc 
+  722  oc describe svc 
+  723  oc describe vm vm1 |less
+  724  oc edit svc vm1 
+  725  oc describe svc 
+  726  oc edit svc vm1 
+  727  oc describe svc 
+  728  oc new-app --name hello httpd:latest 
+  729  oc get pods
+  730  oc get svc 
+  731  oc describe svc hello 
+  732  oc edit deployment hello 
+  733  oc edit pod hello-5b7b5c5b76-5wfhh 
+  734  oc edit deployment hello 
+  735  oc describe svc hello 
+  736  oc edit svc hello 
+  737  oc describe svc hello 
+  738  oc edit svc hello 
+  739  oc describe svc hello 
+  740  oc get svc 
+  741  ssh developer@192.168.50.22
+  742  oc get vm
+  743  oc get vmi
+  744  oc edit vm vm1
+  745  oc edit vm vm-rhel9 
+  746  vim service.yaml 
+  747  oc edit vm vm-rhel9 
+  748  oc edit vm vm1
+  749  oc get pods
+  750  oc delete all -l app=hello 
+  751  oc get pods
+  752  oc get vm
+  753  oc get vmi 
+  754  oc get svc 
+  755  vim service.yaml 
+  756  oc apply -f service.yaml 
+  757  oc get svc 
+  758  ssh developer@192.168.50.24 
+  759  virtctl console vm-rhel9
+  760  ssh cp@192.168.50.24 
+  761  virtctl console vm-rhel9
+  762  oc get svc 
+  763  ssh cp@192.168.50.22
+  764  cat /etc/redhat-release 
+  765  cat /etc/yum.repos.d/rhel_dvd.repo 
+  766  cd
+  767  lab start multihomed-nmstate 
+  768  for x in {1..2}; do sleep 60; echo "$x min over"; done
+  769  lab start multihomed-nmstate
+  770  oc whoami --show-console 
+  771  oc login -u admin -p redhatocp https://api.ocp4.example.com
+  772  oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+  773  oc whoami --show-console 
+  774  ssh core@192.168.50.13
+  775  oc get nodes
+  776  oc get nodes worker01  --show-labels | grep external-networl 
+  777  oc get nodes worker01  --show-labels | grep external-network
+  778  oc get nodes worker02  --show-labels | less
+  779  oc project network-lb 
+  780  pwd
+  781  oc get network-attachment-definitions.k8s.cni.cncf.io 
+  782  oc get network-attachment-definitions.k8s.cni.cncf.io -o yaml 
+  783  oc get network-attachment-definitions.k8s.cni.cncf.io -o yaml > network-da.yaml 
+  784  oc developler-vms 
+  785  oc project developler-vms 
+  786  oc project developer-vms 
+  787  oc get network-attachment-definitions.k8s.cni.cncf.io 
+  788  ls
+  789  ls -lrth 
+  790  oc apply -f network-da.yaml 
+  791  oc get network-attachment-definitions.k8s.cni.cncf.io 
+  792  oc project -q 
+  793  vim network-da.yaml 
+  794  oc apply -f network-da.yaml 
+  795  oc project -q 
+  796  oc get network-attachment-definitions.k8s.cni.cncf.io 
+  797  route -n 
+  798  ping 192.168.50.12
+  799  ping 192.168.50.13
+  800  ping 192.168.51.13
+  801  ssh utility 
+  802  oc project -q
+  803  oc get pods
+  804  oc get vmi 
+  805  virtctl console deny-all.yaml 
+  806  virtctl console dev-dbaccess
+  807  ssh utility  
+  808  ssh core@192.168.51.13
+  809  ssh core@192.168.50.13
+  810  oc get pods
+  811  oc get vmi 
+  812  virtctl console stkage-vm1
+  813  oc get vmi 
+  814  virtctl console stkage-vm2
+  815  oc get vmi 
+  816  virtctl console stkage-vm1 
+  817  cat /etc/yum.repos.d/rhel_dvd.repo 
+  818  oc whoamin 
+  819  oc whoami
+  820  oc get vmi
+  821  virtctl console stkage-vm1
+  822  oc whoami  
+  823  oc whoami  --show-console 
+  824  oc project developer-vms 
+  825  oc get pods 
+  826  oc get cdi 
+  827  oc get vm
+  828  oc get vmi 
+  829  oc get svc
+  830  virtctl consle stkage-vm1
+  831  virtctl console stkage-vm1
+  832  oc get vm
+  833  oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+  834  oc get vm
+  835  oc edit vm stkage-vm1 
+  836  oc get pods
+  837  oc rsh virt-launcher-stkage-vm1-22ndl
+  838  virtctl --help | grep stop 
+  839  virtctl --help | grep start 
+  840  oc get vmi 
+  841  virtctl restart stkage-vm1
+  842  oc get vmi 
+  843  oc get pods -o wide 
+  844   LABEL='kubevirt.io/domain=vm1'
+  845  POD=$(oc get pod -l ${LABEL} -o name)
+  846  echo ${POD}
+  847  oc get pod -l ${LABEL} -o name
+  848  LABEL='kubevirt.io/domain=vm1'
+  849  oc get pod -l ${LABEL} -o name
+  850  oc get vm
+  851  oc get vm stkage-vm1 -o yaml |less
+  852  #kubevirt.io/domain: vm1
+  853  oc get pods -l kubevirt.io/domain 
+  854  oc get pods -l kubevirt.io/domain=vm1
+  855  oc get vm 
+  856  oc edit vm/stkage-vm1
+  857  LABEL='kubevirt.io/domain=stkage-vm1'
+  858  oc get pod -l ${LABEL} -o name
+  859  POD=$(oc get pod -l ${LABEL} -o name)
+  860  echo $POD
+  861  oc get vmi 
+  862  oc get vm
+  863  oc get svc 
+  864   oc expose ${POD} --name=stkage-vm1  --type=LoadBalancer --selector kubevirt.io/domain=stkage-vm1  --port=22  -o yaml --dry-run=client | tee service.yaml
+  865  vim service.yaml 
+  866  oc apply -f service.yaml 
+  867  oc get svc 
+  868  ssh developer@192.168.50.26
+  869  ls -l .ssh/lab_rsa.pub 
+  870  cat .ssh/lab_rsa.pub
+  871  ssh cp@192.168.50.26
+  872  vim service.yaml 
+  873  oc apply -f service.yaml 
+  874  oc get svc
+  875  vim service.yaml 
+  876  oc edit svc stkage-vm1 
+  877  vim service.yaml 
+  878  oc apply -f service.yaml 
+  879  oc get svc 
+  880  curl http://172.30.62.63
+  881  curl http://192.168.50.26
+  882  oc new-app --name myapp
+  883  oc new-app --name myapp httpd:latest 
+  884  oc get pods 
+  885  oc get all 
+  886  oc get svc 
+  887  curl http://192.168.50.26
+  888  ssh cp@192.168.50.26
+  889  cd CKA/
+  890  pw
+  891  pwd
+  892  ls -l 
+  893  oc whoami 
+  894  cp -rpv data-app-deploy data-app-deploy-pvc
+  895  ll
+  896  cd data-app-deploy-pvc/
+  897  pwd
+  898  ll
+  899  pwd
+  900  ll
+  901  oc new-project ns-project05
+  902  oc project -q
+  903  oc get pods
+  904  ll
+  905  oc apply -f deployment-mysql.yaml 
+  906  oc apply -f service-mysql.yaml 
+  907  oc apply -f deployment-quotes.yaml 
+  908  oc apply -f service-myapp.yaml 
+  909  oc get pods 
+  910  kubectl get pdos
+  911  kubectl get pods
+  912  ll
+  913  history | grep secret 
+  914  oc create secret generic mysql --from-literal user=myuser --from-literal password=redhat123 --from-literal database=test_secrets --from-literal hostname=mysql --dry-run=client -o yaml > mysecret.yaml 
+  915  ll
+  916  vim mysecret.yaml 
+  917  #kubectl set env --from secret/mysql deployment myapp --prefix=QUOTES_
+  918  kubectl set env --from secret/mysql deployment myapp --prefix=MYSQL_
+  919  kubectl completion --help |less
+  920    kubectl completion bash > ~/.kube/completion.bash.inc
+  921    printf "
+  922    # kubectl shell completion
+  923    source '$HOME/.kube/completion.bash.inc'
+  924    " >> $HOME/.bash_profile
+  925    source $HOME/.bash_profile
+  926  kubectl apply -f mysecret.yaml 
+  927  kubectl set env --from secret/mysql deployment myapp --prefix=MYSQL_
+  928  kubectl set env --from secret/mysql deployment myapp --prefix=QUOTES_
+  929  kubectl get pods 
+  930  kubectl logs mysql-94bfd4b58-gvjzj
+  931  kubectl get secret 
+  932  kubectl get pods 
+  933  oc delete pod mysql-94bfd4b58-gvjzj 
+  934  kubectl get pods 
+  935  kubectl create secret generic mysql --from-literal user=myuser --from-literal password=redhat123 --from-literal database=test_secrets --from-literal hostname=mysql --dry-run=client -o yaml > mysecret-2.yaml 
+  936  kubectl create secret generic mysql --from-literal user=myuser --from-literal password=redhat123 --from-literal database=test_secrets --from-literal hostname=mysql 
+  937  kubectl get pods 
+  938  kubectl logs mysql-94bfd4b58-rzg6g 
+  939  kubectl set env --from secret/mysql deployment mysql --prefix=MYSQL_
+  940  kubectl get pods 
+  941  kubectl scale --replicas=1 deployment myapp 
+  942  kubectl get pods 
+  943  kubectl get sc
+  944  oc edit sc nfs-storage
+  945  cd
+  946  oc whoami --show-console 
+  947  oc project developer-vms 
+  948  oc get pods 
+  949  oc get vm 
+  950  oc get vmi
+  951  oc get svc 
+  952  oc project -q
+  953  ssh 192.168.50.26 -l cp 
+  954  oc get pods 
+  955  oc get vmi 
+  956  oc get svc
+  957  curl http://192.168.50.26
+  958  virtctl restart stkage-vm1
+  959  oc get vmi 
+  960  curl http://192.168.50.26
+  961  ssh 192.168.50.26 -l cp 
+  962  curl http://192.168.50.26
+  963  ssh 192.168.50.26 -l cp 
+  964  oc get vmi 
+  965  oc get svc 
+  966  ssh cp@192.168.50.26
+  967  oc get nodes -o wide 
+  968  ssh core@192.168.50.10
+  969  ssh core@192.168.50.13
+  970  oc get nodes --show-labels  | grep external
+  971  oc get nodes --show-labels  | grep external |less
+  972  oc get nodes --show-labels  | less
+  973  oc get vm 
+  974  virtctl console dev-dbaccess
+  975  oc get svc
+  976  ssh cp@192.168.50.28
+  977  oc get svc 
+  978  curl http://192.168.50.28
+  979  ssh cp@192.168.50.28
+  980  oc get vmi 
+  981  oc get svc 
+  982  ssh cp@192.168.50.28
+  983   lab start -t do316 multihomed-nmstate
+  984  oc get nodes 
+  985  cat /etc/redhat-release 
+  986  cat /etc/yum.repos.d/rhel_dvd.repo 
+  987  oc get vmi 
+  988  oc get svc
+  989  ssh cp@192.168.50.28
+  990  ssh cp@192.168.50.26
+  991  oc login -u admin -p redhatocp htttps://api.ocp4.example.com:6443 
+  992  oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+  993  oc project -q 
+  994  oc get pods
+  995  oc get cdi 
+  996  oc get vm 
+  997  oc get vmi 
+  998  oc get svc 
+  999  oc get vmi 
+ 1000  virtctl console dev-dbaccess
+ 1001  kubectl get sc 
+ 1002  kubectl get pods
+ 1003  kubectl completion |less
+ 1004  kubectl --help |less
+ 1005  kubectl completion|less
+ 1006  kubectl completion --help |less
+ 1007  kubectl completion bash > ~/.kube/completion.bash.inc
+ 1008    printf "
+  # kubectl shell completion
+  source '$HOME/.kube/completion.bash.inc'
+  " >> $HOME/.bash_profile
+ 1009    source $HOME/.bash_profile
+ 1010  kubectl scale --replicas=0 deployment myapp 
+ 1011  kubectl get pods
+ 1012  kubectl scale --replicas=1 deployment myapp 
+ 1013  kubectl get pods
+ 1014  kubectl exec -it mysql-7cbccf44cf-c4mvx bash 
+ 1015  ll
+ 1016  kubectl get pods
+ 1017  kubectl delete pod mysql-7cbccf44cf-c4mvx 
+ 1018  kubectl get pods
+ 1019  kubectl describe pod mysql-7cbccf44cf-bk7g9 |less
+ 1020  kubectl get pvc 
+ 1021  ll
+ 1022  kubectl get pvc 
+ 1023  kubectl get sc | grep nfs-storage
+ 1024  ssh root@utility 
+ 1025  kubectl get pods
+ 1026  kubectl exec -it mysql-7cbccf44cf-bk7g9 bash 
+ 1027  kubectl get sc
+ 1028  ll
+ 1029  history > history-reference.txt
