@@ -1,0 +1,9 @@
+ FROM ubi7/ubi:7.7
+ MAINTAINER Your Name <youremail>
+ LABEL description="A custom Apache container based on UBI 7"
+ RUN yum install -y httpd && \
+    yum clean all
+ RUN sed -i 's/Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf
+ EXPOSE 8080
+ RUN echo "Hello from Dockerfile" > /var/www/html/index.html
+ CMD ["httpd", "-D", "FOREGROUND"]
